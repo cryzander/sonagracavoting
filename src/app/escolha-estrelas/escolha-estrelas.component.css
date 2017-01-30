@@ -1,0 +1,11 @@
+.centralizarDivsExterna {
+    position: relative;
+    width: 100%;
+}
+
+.centralizarDivsInternas {
+    padding: 40px 15px;
+    text-align: center;
+    display: inline;
+}
+
