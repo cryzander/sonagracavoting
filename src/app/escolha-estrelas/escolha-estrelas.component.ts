@@ -19,6 +19,10 @@ export class EscolhaEstrelasComponent implements OnInit {
   imagensEstrelas = ['estrela-ruim.png', 'estrela-fraco.png', 'estrela-bom.png', 'estrela-excelente.png', 'estrela-incrivel.png' ];
   imagensRostinhos = [ 'emo-ruim.png ', 'emo-fraco.png', 'emo-bom.png', 'emo-excelente.png', 'emo-incrivel.png' ];
 
+  imagensEstrelasDic = {'estrela-ruim.png':false, 'estrela-fraco.png':false, 'estrela-bom.png':false, 'estrela-excelente.png':false, 'estrela-incrivel.png':false };
+
+  indiceEstrela: number = 0;
+  quantidadeEstrelas: number = 0;
 
   constructor( private _soNaGracaService: SoNaGracaService ) {
 
@@ -29,5 +33,23 @@ export class EscolhaEstrelasComponent implements OnInit {
   ngOnInit() {
 
   }
+
+  // Escolher estrelas para modificar o DOM
+  escolherEstrelas( _indiceEstrela: number ){
+    this.indiceEstrela = _indiceEstrela;
+    for (let estrela in this.imagensEstrelasDic){
+        
+        console.log(estrela)
+        console.log(_indiceEstrela);
+    }
+
+  }
+
+  // Vota no candidato com a quantidade de estrelas escolhidas
+  votarCandidato( _quantidadeEstrelas: number ){
+    this.quantidadeEstrelas = _quantidadeEstrelas;
+  }
+
+
 
 }

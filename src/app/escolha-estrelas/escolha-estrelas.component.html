@@ -4,7 +4,7 @@
 <div class="row">
     <div class="centralizarDivsInternas">
         <div class="col-sm-12 col-xs-12">
-            <div *ngFor="let imagensRostinho of imagensRostinhos" style="display: inline">
+            <div *ngFor="let imagensRostinho of imagensRostinhos" style="display: inline" >
                 <img src="{{ caminhoImagens }}{{ pastaRostinhos }}{{ imagensRostinho }}" height="100" width="100">
             </div>
         </div>
@@ -14,8 +14,8 @@
 <div class="row">
     <div class="centralizarDivsInternas">
         <div class="col-sm-12 col-xs-12">
-            <div *ngFor="let estrelaimagem of imagensEstrelas" style="display: inline">
-                <img src="{{ caminhoImagens }}{{ pastaEstrelas }}{{ estrelaimagem }}" height="75" width="75">
+            <div *ngFor="let estrelaimagem of imagensEstrelas, let i = index" style="display: inline" >
+                <img src="{{ caminhoImagens }}{{ pastaEstrelas }}{{ estrelaimagem }}" height="75" width="75" (click)="escolherEstrelas( i + 1 )">
             </div>
         </div>
     </div>
